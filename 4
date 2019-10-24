@@ -1,12 +1,10 @@
 #include "stdafx.h"
 #include "iostream"
 using namespace std;
-
-
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	int n,m;
+	int n, m;
 	cin >> n;
 	cin >> m;
 	int *mat_s = new int[n];
@@ -42,8 +40,8 @@ int main()
 	for (int i = 0; i < n; i++){
 		cout << mat_p[i] << " ";
 	}
-	
-	for (int i = 0; i < n; i++){
+
+	for (int i = 0; i < m; i++){
 		delete[]mat[i];
 	}
 	delete[]mat;
