@@ -1,26 +1,18 @@
-#include "stdafx.h"
-#include "iostream"
-using namespace std;
-
-
+#include "stdio.h"
 int main()
 {
-	setlocale(LC_ALL, "ru");
 	int n, x_min=0, y_min=0, x_max=0,y_max=0;
-	cin >> n;
-	int **m = new int*[n];
-	for (int i = 0; i < n; i++){
-		m[i] = new int[n];
-	}
+	scanf("%d",&n);
+	int m[n][n];
 	for (int i = 0; i < n; i++){
 		for (int j = 0; j < n; j++){
-			cin >>m[i][j];
+		scanf("%d",&m[i][j]);
 		}
 	}
 	int max = m[0][0], min = m[0][0];
 	for (int i = 0; i < n; i++){
 		for (int j = 0; j < n; j++){
-			cout << "[" << i << "][" << j << "]= " << m[i][j] << "\t";
+			printf("[%d][%d]= %d",i,j,m[i][j]);
 			if (m[i][j]>max){
 				max = m[i][j];
 				x_max = i;
@@ -32,13 +24,9 @@ int main()
 				y_min = j;
 			}
 		}
-		cout << endl;
+		printf("\n");
 	}
-	cout << "max: [" << x_max << "][" << y_max << "]= " << max << endl;
-	cout << "min: [" << x_min << "][" << y_min << "]= " << min << endl;
-	for (int i = 0; i < n; i++){
-		delete[]m[i];
-	}
-	delete[]m;
+	printf("max - [%d][%d]= %d",x_max,y_max,max);     
+	printf("min - [%d][%d]= %d",x_min,y_min,min); 
 	return 0;
 }
